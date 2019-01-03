@@ -1,15 +1,15 @@
 {
-    "key": "my-add-on",
-    "name": "Ping Pong",
+    "key": "jsd-bulk-customer-import",
+    "name": "Jira Service Desk Bulk Customer Import",
     "description": "My very first add-on",
     "vendor": {
-        "name": "Angry Nerds",
-        "url": "https://www.atlassian.com/angrynerds"
+        "name": "Simon Merrick",
+        "url": "https://github.com/iokiwi"
     },
     "baseUrl": "{{localBaseUrl}}",
     "links": {
-        "self": "{{localBaseUrl}}/atlassian-connect.json",
-        "homepage": "{{localBaseUrl}}/atlassian-connect.json"
+        "self": "{{localBaseUrl}}atlassian-connect.json",
+        "homepage": "{{localBaseUrl}}atlassian-connect.json"
     },
     "authentication": {
         "type": "jwt"

@@ -15,6 +15,10 @@
     "express-hbs": "*",
     "morgan": "^1.6.1",
     "sequelize": "^4.38.0",
+    "sqlite": "^3.0.0",
     "static-expiry": ">=0.0.5"
+  },
+  "devDependencies": {
+    "ngrok": "^2.3.0"
   }
 }
