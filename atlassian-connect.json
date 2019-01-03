@@ -1,0 +1,34 @@
+{
+    "key": "my-add-on",
+    "name": "Ping Pong",
+    "description": "My very first add-on",
+    "vendor": {
+        "name": "Angry Nerds",
+        "url": "https://www.atlassian.com/angrynerds"
+    },
+    "baseUrl": "{{localBaseUrl}}",
+    "links": {
+        "self": "{{localBaseUrl}}/atlassian-connect.json",
+        "homepage": "{{localBaseUrl}}/atlassian-connect.json"
+    },
+    "authentication": {
+        "type": "jwt"
+    },
+    "lifecycle": {
+        "installed": "/installed"
+    },
+    "scopes": [
+        "READ"
+    ],
+    "modules": {
+        "serviceDeskPortalHeaders": [
+            {
+                "key": "hello-world-sd-portal-header",
+                "url": "/hello-world"
+            }
+        ]
+    },
+    "apiMigrations": {
+        "gdpr": true
+    }
+}
