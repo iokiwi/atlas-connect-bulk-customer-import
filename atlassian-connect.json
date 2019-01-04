@@ -21,10 +21,15 @@
         "READ"
     ],
     "modules": {
-        "serviceDeskPortalHeaders": [
+        "jiraProjectAdminTabPanels": [
             {
-                "key": "hello-world-sd-portal-header",
-                "url": "/hello-world"
+                "location": "projectgroup1",
+                "url": "/upload-csv",
+                "weight": 100,
+                "name": {
+                    "value": "Bulk Customer Upload"
+                },
+                "key": "admin-panel"
             }
         ]
     },
