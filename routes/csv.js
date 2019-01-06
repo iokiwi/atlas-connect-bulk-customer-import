@@ -17,14 +17,14 @@ var rowsToRecords = function(rows, includesHeaderRow = true){
 
 module.exports = function (app, addon) {
 
-    app.get('/upload-csv', addon.authenticate(), function (req, res) {
+    app.get('/csv/new', addon.authenticate(), function (req, res) {
         res.render('upload-csv', {
             title: 'Bulk Upload'
             //issueId: req.query['issueId']
         });
     });
 
-    app.post('/upload-csv', addon.authenticate(), upload.single('customerFile'), function (req, res) {
+    app.post('/csv/upload', addon.authenticate(), upload.single('customerFile'), function (req, res) {
 
         /* TODO: Validate! Validate! Validate! */
 
@@ -35,10 +35,11 @@ module.exports = function (app, addon) {
             })
             .on("end", function() {
                 records = rowsToRecords(rows);
-                res.render('show-csv', {
+                res.render('confirm', {
                     records: records,
                     csv: req.file.path /* Is this secure? */
                 });
             });
     });
+
 };

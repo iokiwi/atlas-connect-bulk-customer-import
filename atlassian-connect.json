@@ -24,7 +24,7 @@
         "jiraProjectAdminTabPanels": [
             {
                 "location": "projectgroup4",
-                "url": "/upload-csv",
+                "url": "/csv/new",
                 "weight": 100,
                 "name": {
                     "value": "Bulk Customer Upload"
