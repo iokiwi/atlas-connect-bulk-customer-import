@@ -9,8 +9,18 @@ This atlassian connect app implementation of [jsd-bulk-customer-upload](https://
  
 ## To Run
 
+Install from `package.json`
 ```bash
 npm install
+```
+
+Install `sqlite3` seperately (for development)
+```bash
+npm install sqlite3
+```
+
+Start the server
+```
 npm start
 ```
 

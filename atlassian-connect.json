@@ -23,7 +23,7 @@
     "modules": {
         "jiraProjectAdminTabPanels": [
             {
-                "location": "projectgroup1",
+                "location": "projectgroup4",
                 "url": "/upload-csv",
                 "weight": 100,
                 "name": {

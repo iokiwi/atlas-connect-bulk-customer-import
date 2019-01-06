@@ -1,3 +1,6 @@
+var multer = require('multer');
+var upload = multer({dest:'uploads'});
+
 module.exports = function (app, addon) {
 
     // Root route. This route will serve the `atlassian-connect.json` unless the
@@ -28,29 +31,16 @@ module.exports = function (app, addon) {
         }
     );
 
-    // This is an example route that's used by the default "generalPage" module.
-    // Verify that the incoming request is authenticated with Atlassian Connect
     app.get('/upload-csv', addon.authenticate(), function (req, res) {
-            // Rendering a template is easy; the `render()` method takes two params: name of template
-            // and a json object to pass the context in
-            res.render('upload-csv', {
-                title: 'Bulk Upload'
-                //issueId: req.query['issueId']
-            });
-        }
-    );
+        res.render('upload-csv', {
+            title: 'Bulk Upload'
+            //issueId: req.query['issueId']
+        });
+    });
 
-    // This is an example route that's used by the default "generalPage" module.
-    // Verify that the incoming request is authenticated with Atlassian Connect
-    app.post('/upload-csv', addon.authenticate(), function (req, res) {
-            // Rendering a template is easy; the `render()` method takes two params: name of template
-            // and a json object to pass the context in
-            res.render('hello-world', {
-                title: 'Bulk Upload'
-                //issueId: req.query['issueId']
-            });
-        }
-    );
+    app.post('/upload-csv', upload.single('customerFile'), addon.authenticate(), function (req, res) {
+        res.send(req.file.length());
+    });
 
     // Add any additional route handlers you need for views or REST resources here...
 
