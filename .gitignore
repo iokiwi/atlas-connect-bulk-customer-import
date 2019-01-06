@@ -1,5 +1,7 @@
 .idea/
 credentials.json
+tmp/
+uploads/
 
 # Logs
 logs

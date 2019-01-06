@@ -1,5 +1,6 @@
+var csv = require('fast-csv');
 var multer = require('multer');
-var upload = multer({dest:'uploads'});
+var upload = multer({dest:'tmp/csv/'});
 
 module.exports = function (app, addon) {
 
@@ -38,12 +39,21 @@ module.exports = function (app, addon) {
         });
     });
 
-    app.post('/upload-csv', upload.single('customerFile'), addon.authenticate(), function (req, res) {
-        res.send(req.file.length());
+    app.post('/upload-csv', addon.authenticate(), upload.single('customerFile'), function (req, res) {
+
+        /* TODO: Validate! Validate! Validate! */
+
+        var rows = [];
+        csv.fromPath(req.file.path)
+            .on("data", function(data){
+                rows.push(data);
+            })
+            .on("end", function() {
+               res.send(rows)
+            });
     });
 
     // Add any additional route handlers you need for views or REST resources here...
-
 
     // load any additional files you have in routes and apply those to the app
     {
