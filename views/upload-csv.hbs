@@ -1,16 +1,20 @@
 {{!< layout}}
-<div class="aui-page-panel main-panel">
-    <form class="aui" method="post" action="/upload-csv?jwt={{token}}" enctype="multipart/form-data">
-        <fieldset>
-            <legend><span>File upload</span></legend>
-            <div class="field-group">
-                <label for="file-upload-example">Upload
-                    file</label>
-                <input class="upfile" type="file" id="file-upload-example" name="customerFile">
-            </div>
-            <div class="field-group">
-                <button class="aui-button" type="submit">Upload</button>
-            </div>
-        </fieldset>
-    </form>
+<div class="aui-page-panel">
+    <div class="aui-page-panel-inner">
+        <section class="aui-page-panel-content">
+            <form class="aui" method="post" action="/upload-csv?jwt={{token}}" enctype="multipart/form-data">
+                <fieldset>
+                    <legend><span>File upload</span></legend>
+                    <div class="field-group">
+                        <label for="file-upload-example">Upload
+                            file</label>
+                        <input class="upfile" type="file" id="file-upload-example" name="customerFile">
+                    </div>
+                    <div class="field-group">
+                        <button class="aui-button" type="submit">Upload</button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </div>
 </div>
