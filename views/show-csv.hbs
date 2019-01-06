@@ -1,0 +1,31 @@
+{{!< layout}}
+<div class="aui-page-panel">
+    <div class="aui-page-panel-inner">
+        <section class="aui-page-panel-content">
+            <table class="aui">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Organisation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each records as |record|}}
+                        <tr>
+                            <td>{{record.name}}</td>
+                            <td>{{record.email}}</td>
+                            <td>{{record.organisation}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+            <form method="post" action="confirm?jwt={{token}}" class="aui">
+                <input type="hidden" value="{{csv}}">
+                <button class="aui-button aui-button-primary">Confirm</button>
+                <a class="cancel" href="/upload-csv">Cancel</a>
+            </form>
+        </section>
+    </div>
+</div>
