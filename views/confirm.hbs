@@ -13,9 +13,9 @@
                 <tbody>
                     {{#each records as |record|}}
                         <tr>
-                            <td>{{record.name}}</td>
-                            <td>{{record.email}}</td>
-                            <td>{{record.organisation}}</td>
+                            <td>{{record.customer.name}}</td>
+                            <td>{{record.customer.email}}</td>
+                            <td>{{record.organisation.name}}</td>
                         </tr>
                     {{/each}}
                 </tbody>

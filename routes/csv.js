@@ -7,9 +7,13 @@ var rowsToRecords = function(rows, includesHeaderRow = true){
     var records = [];
     rows.forEach((row) => {
         records.push({
-            name: row[0],
-            email: row[1],
-            organisation: row[2]
+            customer: {
+                name: row[0],
+                email: row[1]
+            },
+            organisation: {
+                name: row[2]
+            }
         })
     });
     return records;
@@ -41,5 +45,4 @@ module.exports = function (app, addon) {
                 });
             });
     });
-
 };
